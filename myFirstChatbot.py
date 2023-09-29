@@ -1,5 +1,4 @@
 import openai
-import streamlit as st
 openai.api_key="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"
 
 def generate_response(myprompt):
@@ -14,10 +13,11 @@ def generate_response(myprompt):
     return response.choices[0].text.strip()
 
 def main ():
-    st.title("Friendly Chat with Dr. Truong")
-    myprompt = st.input("I am Dr. Truong. I am a licensed Therapist. How can I help you? \n")
-    if st.button("Submit"):
-        st.write(generate_response(myprompt))
+    # st.title("Friendly Chat with Dr. Truong")
+    myprompt = input("I am Dr. Truong. I am a licensed Therapist. How can I help you? \n")
+    print(generate_response(myprompt))
+    # if st.button("Submit"):
+    #     st.write(generate_response(myprompt))
 
 if __name__ == "__main__":
     main()
